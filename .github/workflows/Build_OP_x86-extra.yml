@@ -91,7 +91,7 @@ jobs:
         CONFIG_EXTRA_FILE: 'x86-extra.config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-        # [ -e $CONFIG_EXTRA_FILE ] && cat $CONFIG_EXTRA_FILE >> openwrt/.config
+        [ -e $CONFIG_EXTRA_FILE ] && cat $CONFIG_EXTRA_FILE >> openwrt/.config
        chmod +x ./customize.sh && ./customize.sh
         cd openwrt && make defconfig
         
